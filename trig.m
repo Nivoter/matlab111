@@ -1,14 +1,14 @@
-    clear,close
-    N=14
+function X = trig(N)
+    close
     Rule1 = 'FF';
     Rule2 = '--FXF++FXF++FXF--';
     X = 'FXF--FF--FF';
     teta = pi/3;
     alfa = 0;
-    u=1; %Для передачи правил в массив
-    i=1; %Счетчик итераций
-    j=1; %Счетчик элементов аксиомы
-    v=1; %Счетчик элментов новой аксиомы
+    u=1; %Г„Г«Гї ГЇГҐГ°ГҐГ¤Г Г·ГЁ ГЇГ°Г ГўГЁГ« Гў Г¬Г Г±Г±ГЁГў
+    i=1; %Г‘Г·ГҐГІГ·ГЁГЄ ГЁГІГҐГ°Г Г¶ГЁГ©
+    j=1; %Г‘Г·ГҐГІГ·ГЁГЄ ГЅГ«ГҐГ¬ГҐГ­ГІГ®Гў Г ГЄГ±ГЁГ®Г¬Г»
+    v=1; %Г‘Г·ГҐГІГ·ГЁГЄ ГЅГ«Г¬ГҐГ­ГІГ®Гў Г­Г®ГўГ®Г© Г ГЄГ±ГЁГ®Г¬Г»
     while i<N+1
         len_X = length(X);
         while j<len_X+1
@@ -39,20 +39,20 @@
         j=1;
         v=1;
     end
-    %line = animatedline;
+    line = animatedline;
     i=2;
     j=1;
     x(1)=0;
     y(1)=0;
-    %addpoints(line,x(1),y(1));
-    %drawnow
+    addpoints(line,x(1),y(1));
+    drawnow
     while j<length(X)+1
         if X(j) == 'F'
                 x(i) = x(i-1)+cos(alfa);
                 y(i) = y(i-1)+sin(alfa);
-                %addpoints(line,x(i),y(i));
+                addpoints(line,x(i),y(i));
                 i=i+1;
-                %drawnow
+                drawnow
         elseif X(j)=='-'
                 alfa = alfa-teta;
         elseif X(j) =='+'
@@ -60,4 +60,4 @@
         end 
         j=j+1;
     end
-    
+end
